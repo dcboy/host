@@ -45,6 +45,10 @@ func IsA64() bool {
 }
 
 //
+func IsH3() bool {
+	detection.do()
+	return detection.isH3
+}
 
 type detectionS struct {
 	mu          sync.Mutex
@@ -53,6 +57,7 @@ type detectionS struct {
 	isR8        bool
 	isA20       bool
 	isA64       bool
+	isH3        bool
 }
 
 var detection detectionS
@@ -90,6 +95,9 @@ func (d *detectionS) do() {
 				if hw, ok := distro.CPUInfo()["Hardware"]; ok {
 					if hw == "sun7i" {
 						d.isA20 = true
+					} else if hw == "sun8i" {
+						d.isH3 = true
+						d.isAllwinner = true
 					}
 				}
 			}
