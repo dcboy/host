@@ -1,7 +1,6 @@
 package allwinner
 
 import (
-	"fmt"
 	"strings"
 
 	"periph.io/x/conn/v3/pin"
@@ -34,7 +33,6 @@ var mappingH3 = map[string][5]pin.Func{
 // It is called by the generic allwinner processor code if an A20 is detected.
 func mapH3Pins() error {
 	for name, altFuncs := range mappingH3 {
-		fmt.Printf("name: %s", name)
 		pin := cpupins[name]
 		pin.altFunc = altFuncs
 		pin.available = true
