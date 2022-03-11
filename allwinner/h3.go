@@ -33,7 +33,6 @@ var mappingH3 = map[string][5]pin.Func{
 //
 // It is called by the generic allwinner processor code if an A20 is detected.
 func mapH3Pins() error {
-	fmt.Println("h3 gpio mapH3Pins")
 	for name, altFuncs := range mappingH3 {
 		fmt.Printf("name: %s", name)
 		pin := cpupins[name]
