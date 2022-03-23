@@ -83,8 +83,11 @@ func (d *detectionS) do() {
 				if strings.Contains(c, "sun7i-a20") {
 					d.isA20 = true
 				}
+				if strings.Contains(c, "sun8i-h3") {
+					d.isH3 = true
+				}
 			}
-			d.isAllwinner = d.isA64 || d.isR8 || d.isA20
+			d.isAllwinner = d.isA64 || d.isR8 || d.isA20 || d.isH3
 
 			if !d.isAllwinner {
 				// The kernel in the image that comes pre-installed on the pcDuino3 Nano
