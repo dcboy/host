@@ -20,6 +20,7 @@ var mappingH3 = map[string][5]pin.Func{
 	"PA8":  {"SIM_DATA", "", "", "", "PA_EINT8"},
 	"PA9":  {"SIM_RST", "", "", "", "PA_EINT9"},
 	"PA10": {"SIM_DET", "", "", "", "PA_EINT10"},
+	"PA11": {"TWI0_SCK", "DI_TX", "", "", "PA_EINT11"},
 	"PA12": {"TWI0_SDA", "DI_RX", "", "", "PA_EINT12"},
 	"PA17": {"OWA_OUT", "", "", "", "PA_EINT17"},
 	"PA18": {"PCM0_SYNC", "TWI1_SCK", "", "", "PA_EINT18"},
