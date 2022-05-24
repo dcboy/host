@@ -13,6 +13,7 @@ import (
 // It omits the in & out functions which are available on all gpio.
 //
 // The mapping comes from the datasheet page 241:
+// https://linux-sunxi.org/H3/PIO
 // http://dl.linux-sunxi.org/A20/A20%20User%20Manual%202013-03-22.pdf
 var mappingH3 = map[string][5]pin.Func{
 	"PA6":  {"SIM_PWREN", "", "", "", "PA_EINT6"},
@@ -28,10 +29,12 @@ var mappingH3 = map[string][5]pin.Func{
 	"PA20": {"PCM0_DOUT", "SIM_VPPEN", "", "", "PA_EINT20"},
 	"PA21": {"PCM0_DIN", "SIM_VPPPP", "", "", "PA_EINT21"},
 	"PC0":  {"NAND_WE", "SPI0_MOSI"},
-	"PC1":  {"NAND_ALE", "SPI0_MISO"},
-	"PC2":  {"NAND_CLE", "SPI0_CLK"},
-	"PC3":  {"NAND_CE1", "SPI0_CS"},
-	"PC4":  {"NAND_CE0"},
+	"PC1":  {"NALE", "SPI0_MISO"},
+	"PC2":  {"NCLE", "SPI0_CLK"},
+	"PC3":  {"NCE1", "SPI0_CS"},
+	"PC4":  {"NCE0"},
+	"PC7":  {"NRB1"},
+	"PD14": {""},
 }
 
 // mapA20Pins uses mappingA20 to actually set the altFunc fields of all gpio
