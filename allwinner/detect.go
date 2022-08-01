@@ -98,7 +98,7 @@ func (d *detectionS) do() {
 				if hw, ok := distro.CPUInfo()["Hardware"]; ok {
 					if hw == "sun7i" {
 						d.isA20 = true
-					} else if hw == "sun8i" {
+					} else if hw == "sun8i" || hw == "sun8iw7" {
 						d.isH3 = true
 						d.isAllwinner = true
 					}
