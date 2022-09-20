@@ -86,6 +86,9 @@ func (d *detectionS) do() {
 				if strings.Contains(c, "sun8i-h3") {
 					d.isH3 = true
 				}
+				if strings.Contains(c, "sun8iw7p1") {
+					d.isH3 = true
+				}
 			}
 			d.isAllwinner = d.isA64 || d.isR8 || d.isA20 || d.isH3
 
